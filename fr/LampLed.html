@@ -124,7 +124,7 @@
             document.body.classList.add("light");
         }
         fetch("/EIT/cdn/products.json", { method: "GET" }).then(resp => {if (resp.status === 200) return resp.json()}).then(response => {
-            const data = resp[window.location.href.replace(`${window.location.host}/EIT/fr/`)].fr;
+            const data = response[window.location.href.replace(`${window.location.host}/EIT/fr/`)].fr;
             document.getElementById("title").innerText = data.name;
             document.getElementById("description").innerText = data.description;
             document.getElementById("price").innerText = data.price;
