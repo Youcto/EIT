@@ -12,6 +12,7 @@
             "description": "Lampe Led sur Pied Design RGB avec Télécommande",
             "price": "14.99€",
             "char": [
+                { "title": "Charactéristique" },
                 { "name": "Taille", "value": "?cm" },
                 { "name": "Poid", "value": "?g" },
                 { "name": "Chargeur", "value": "USB C" },
@@ -24,6 +25,7 @@
             "description": "Led Floor Lamp Design RGB with Remote Control",
             "price": "14.99£",
             "char": [
+                { "title": "Characteristic" },
                 { "name": "Size", "value": "?cm" },
                 { "name": "Length", "value": "?g" },
                 { "name": "Charger", "value": "USB C" },
