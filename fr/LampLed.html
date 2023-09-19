@@ -115,6 +115,8 @@
     <script src="https://www.gstatic.com/firebasejs/9.2.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.2.0/firebase-database.js"></script>
     <script>
+        const product = window.location.href.replace(`https://${window.location.host}/EIT/fr/`, "").replace(".html", "");
+        const lang = window.location.href.replace(`https://${window.location.host}/EIT/`, "").replace(`/${product}.html`, "");
         if (localStorage.getItem("theme") === undefined || localStorage.getItem("theme") === null) localStorage.setItem("theme", "dark");
         if (localStorage.getItem("theme") === "dark") {
             document.getElementById("theme").querySelector("img").src = "/EIT/cdn/img/sun.png";
@@ -124,8 +126,8 @@
             document.body.classList.add("light");
         }
         fetch("/EIT/cdn/products.json", { method: "GET" }).then(resp => {if (resp.status === 200) return resp.json()}).then(response => {
-            const data = response[window.location.href.replace(`https://${window.location.host}/EIT/fr/`, "").replace(".html", "")].fr;
-            document.getElementById("title").innerText = data.name;
+            const data = response[product][lang];
+            document.getElementById("title").innerText = data.name ?? product;
             document.getElementById("description").innerText = data.description;
             document.getElementById("price").innerText = data.price;
             data.char.forEach(char => {
