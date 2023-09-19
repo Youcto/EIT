@@ -113,7 +113,7 @@
             document.getElementById("title").innerText = data.name ?? cuttedPage[`${window.location.href.split("/").length-1}`].replace(".html", "");
             document.getElementById("description").innerText = data.description;
             document.getElementById("price").innerText = data.price;
-            document.getElementById("charTitle").innerText = data.char[1].title;
+            document.getElementById("charTitle").innerText = data.char[0].title;
             document.title = `${cuttedPage[`${window.location.href.split("/").length-3}`]} - ${cuttedPage[`${window.location.href.split("/").length-1}`].replace(".html", "")}`;
             data.char.forEach(char => {
                 if (!char.name || !char.value) return;
