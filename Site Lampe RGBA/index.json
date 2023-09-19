@@ -1,0 +1,15 @@
+{
+    "product": {
+        "LampLed": {
+            "title": "Lampe LED RGBA Réglable",
+            "description": "Lampe multicolor en USB C avec télécomande intégrer pour régler la couleur et l'intensité de la lumière",
+            "price": "14.99",
+            "char": [
+                { "title": "Charger", "content": "USB C (fourni)" },
+                { "title": "Télécommande", "content": "Pile AAA (fourni)" },
+                { "title": "Poid", "content": "?g" },
+                { "title": "Taille", "content": "? cm" }
+            ]
+        }
+    }
+}
