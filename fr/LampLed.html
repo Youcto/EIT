@@ -31,7 +31,7 @@
     <div id="content">
         <div id="header" style="background: rgba(0, 0, 0, 0.25); border-bottom: 2px solid rgba(255, 255, 255, 0.25); display: flex; justify-content: space-between; align-items: center;">
             <div style="height: 100%; margin: 0;">
-                <h1 style="height: 100%; display: flex;font-family: fantasy; margin: 5px;">EIT</h1>
+                <a href="/EIT/fr/index.html" style="text-decoration: none; color: unset;"><h1 style="height: 100%; display: flex;font-family: fantasy; margin: 5px;">EIT</h1></a>
             </div>
             <div style="margin: 0;">
                 <button onclick='
@@ -123,62 +123,6 @@
             document.body.classList.remove("dark");
             document.body.classList.add("light");
         }
-        const firebaseConfig = {
-            apiKey: "BCmw9-4S71AFTdoMTnAxvJQOiBRsIpqt5ubOobXTwOOiwUbtI7aRkeZBhVUl9gZVRwI-RG2D7MK4_NXjHYcFAhs",
-            authDomain: "eit-web-page.firebaseapp.com",
-            databaseURL: "https://eit-web-page.firebaseio.com",
-            projectId: "eit-web-page",
-            storageBucket: "eit-web-page.appspot.com",
-            messagingSenderId: "331462311957",
-            appId: "votre-app-id",
-        };
-
-        firebase.initializeApp(firebaseConfig);
-        // fetch("https://eit-web-page-default-rtdb.europe-west1.firebasedatabase.app/products", {
-        //     "auth": null,
-        //     "resource": {
-        //         "LampLed": {
-        //         "title": "Lampe LED RGBA Réglable",
-        //         "description": "Lampe multicolor en USB C avec télécomande intégrer pour régler la couleur et l'intensité de la lumière",
-        //         "price": "14.99",
-        //         "char": [
-        //             {
-        //             "title": "Charger",
-        //             "content": "USB C (fourni)"
-        //             },
-        //             {
-        //             "title": "Télécommande",
-        //             "content": "Pile AAA (fourni)"
-        //             },
-        //             {
-        //             "title": "Poid",
-        //             "content": "?g"
-        //             },
-        //             {
-        //             "title": "Taille",
-        //             "content": "? cm"
-        //             }
-        //         ]
-        //         }
-        //     },
-        //     "path": "/products",
-        //     "method": "GET"
-        // }).then(response => { if (response.status === 200) {throw new Error('La requête n\'a pas fonctionner')} return response.json() })
-        // .then(response => {
-        //     console.log(response);
-        // });
-        
-        //.then(pageInfo => {
-        //     document.getElementById("title").innerText = pageInfo.title;
-        //     document.getElementById("description").innerText = pageInfo.description;
-        //     document.getElementById("price").innerText = `${pageInfo.price} €`;
-        //     pageInfo.char.forEach(char => {
-        //         const span = document.createElement("span");
-        //         span.style = "text-align: center; margin: 5px;";
-        //         span.innerText = `${char.title}: ${char.content}`;
-        //         document.getElementById("charContent").appendChild(span);
-        //     });
-        // }); [`${window.location.href.replace("file:///C:/Users/ilandefoucault--pous/Desktop/Ilan/Ecole/Site%20Lampe%20RGBA/", "").replace(".html", "")}`]
     </script>
 </body>
 </html>
