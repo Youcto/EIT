@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EIT - Lampe Led RGBA</title>
-    <link rel="shortcut icon" href="./img/Logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/EIT/cdn/img/Logo.png" type="image/x-icon">
 </head>
 <body class="dark" style="margin: 0; height: 100%; width: 100%;">
     <style>
@@ -39,13 +39,13 @@
                 document.body.classList.remove("fade");
                 if (localStorage.getItem("theme") === "light") {
                     localStorage.setItem("theme", "dark");
-                    this.querySelector("img").src = "./img/sun.png";
+                    this.querySelector("img").src = "/EIT/cdn/img/sun.png";
                     document.body.classList.remove("light");
                     document.body.classList.add("dark");
                     document.body.classList.add("fade");
                 } else {
                     localStorage.setItem("theme", "light");
-                    this.querySelector("img").src = "./img/moon.png";
+                    this.querySelector("img").src = "/EIT/cdn/img/moon.png";
                     document.body.classList.remove("dark");
                     document.body.classList.add("light");
                     document.body.classList.add("fade");
@@ -53,7 +53,7 @@
                 this.classList.add("fade");
                 setTimeout(function() { document.body.classList.remove("fade"); }, 500)'
                 id="theme" style="cursor: pointer; display: flex; margin: 5px; height: 100%;width: 35px; border: 1px solid rgba(255, 255, 255, 0.5); border-radius: 5px; background: white;">
-                    <img style="height: 100%;width: 100%;" src="./img/sun.png" alt="Theme">
+                    <img style="height: 100%;width: 100%;" src="/EIT/cdn/img/sun.png" alt="Theme">
                 </button>
             </div>
         </div>
@@ -64,24 +64,24 @@
                         <button onclick='
                             if (localStorage.getItem("imageId") === "4") {
                                 localStorage.setItem("imageId", "1");
-                                this.innerHTML = "<img style=\"height: 100%;width: 100%;\" src=\"./img/caddie.png\">";
+                                this.innerHTML = "<img style=\"height: 100%;width: 100%;\" src=\"/EIT/cdn/img/caddie.png\">";
                                 return;
                             }
                             if (localStorage.getItem("imageId") === "1" || localStorage.getItem("imageId") === null || localStorage.getItem("imageId") === undefined) {
                                 localStorage.setItem("imageId", "2");
-                                this.innerHTML = "<img style=\"height: 100%;width: 100%;\" src=\"./img/moon.png\">";
+                                this.innerHTML = "<img style=\"height: 100%;width: 100%;\" src=\"/EIT/cdn/img/moon.png\">";
                                 return;
                             }
                             if (localStorage.getItem("imageId") === "2") {
                                 localStorage.setItem("imageId", "3");
-                                this.innerHTML = "<img style=\"height: 100%;width: 100%;\" src=\"./img/sun.png\">";
+                                this.innerHTML = "<img style=\"height: 100%;width: 100%;\" src=\"/EIT/cdn/img/sun.png\">";
                                 return;
                             }
                             if (localStorage.getItem("imageId") === "3") {
                                 localStorage.setItem("imageId", "4");
-                                this.innerHTML = "<img style=\"height: 100%;width: 100%;\" src=\"./img/Logo.png\">";
+                                this.innerHTML = "<img style=\"height: 100%;width: 100%;\" src=\"/EIT/cdn/img/Logo.png\">";
                                 return;
-                            }' style="height: 50%; width: 50%; background: transparent; border: 0; cursor: pointer;"><img style="height: 100%; width: 100%; border-radius: 5px; height: 100%;" src="./img/moon.png" alt=""></button>
+                            }' style="height: 50%; width: 50%; background: transparent; border: 0; cursor: pointer;"><img style="height: 100%; width: 100%; border-radius: 5px; height: 100%;" src="/EIT/cdn/img/moon.png" alt=""></button>
                     </div>
                 </div>
             </div>
@@ -92,7 +92,7 @@
                         <span style="display: block; text-align: center; margin: 15px;" id="description"></span>
                         <span style="display: block; text-align: center; margin: 2px;" id="price"></span>
                         <div style="display: flex; align-items: end; justify-content: center; margin: 5px;">
-                            <button id="buy" style="font-size: large; cursor: pointer; background: #00ff37; border-radius: 5px; border: 0; display: flex; justify-content: space-evenly; align-items: center; height: 50%; width: 90%; margin: 5px;"><img style="height: 25%; width: 10%; margin: 2px;" src="./img/caddie.png"><span aria-label="Buy" style="color: black;">Buy</span></button>
+                            <button id="buy" style="font-size: large; cursor: pointer; background: #00ff37; border-radius: 5px; border: 0; display: flex; justify-content: space-evenly; align-items: center; height: 50%; width: 90%; margin: 5px;"><img style="height: 25%; width: 10%; margin: 2px;" src="/EIT/cdn/img/caddie.png"><span aria-label="Buy" style="color: black;">Buy</span></button>
                         </div>
                     </div>
                 </div>
@@ -117,9 +117,9 @@
     <script>
         if (localStorage.getItem("theme") === undefined || localStorage.getItem("theme") === null) localStorage.setItem("theme", "dark");
         if (localStorage.getItem("theme") === "dark") {
-            document.getElementById("theme").querySelector("img").src = "./img/sun.png";
+            document.getElementById("theme").querySelector("img").src = "/EIT/cdn/img/sun.png";
         } else {
-            document.getElementById("theme").querySelector("img").src = "./img/moon.png";
+            document.getElementById("theme").querySelector("img").src = "/EIT/cdn/img/moon.png";
             document.body.classList.remove("dark");
             document.body.classList.add("light");
         }
