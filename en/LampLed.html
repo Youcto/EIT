@@ -102,10 +102,10 @@
             const image = localStorage.getItem("image");
             if (JSON.parse(image).current === JSON.parse(image).max) {
                 localStorage.setItem("image", JSON.stringify({ current: 1, max: JSON.parse(image).max }));
-                this.innerHTML = `<img style="height: 100%;width: 100%;" src="/EIT/cdn/img/1.png">`;
+                this.innerHTML = `<img style="height: 100%;width: 100%;" src="/EIT/cdn/products/${cuttedPage[`${window.location.href.split("/").length-1}`].replace(".html", "")}/1.png">`;
             } else {
                 localStorage.setItem("image", JSON.stringify({ current: JSON.parse(image).current++, max: JSON.parse(image).max }));
-                this.innerHTML = `<img style="height: 100%;width: 100%;" src="/EIT/cdn/img/${JSON.parse(image).current++}.png">`;
+                this.innerHTML = `<img style="height: 100%;width: 100%;" src="/EIT/cdn/products/${cuttedPage[`${window.location.href.split("/").length-1}`].replace(".html", "")}/${JSON.parse(image).current++}.png">`;
             }
         }
         fetch("/EIT/cdn/products.json", { method: "GET" }).then(resp => {if (resp.status === 200) return resp.json()}).then(response => {
