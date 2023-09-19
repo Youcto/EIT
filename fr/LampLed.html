@@ -129,7 +129,10 @@
             document.getElementById("description").innerText = data.description;
             document.getElementById("price").innerText = data.price;
             data.char.forEach(char => {
-                document.getElementById("charContent").append(`<span style="text-align: center; margin: 5px;">${char.name}: ${char.value}</span>`);
+                const span = document.createElement("span");
+                span.style = "text-align: center; margin: 5px;";
+                span.innerHTML = `${char.name}: ${char.value}`;
+                document.getElementById("charContent").appendChild(span);
             });
         });
     </script>
