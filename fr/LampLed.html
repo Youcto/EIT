@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EIT - Lampe Led RGBA</title>
+    <title></title>
     <link rel="shortcut icon" href="/EIT/cdn/img/Logo.png" type="image/x-icon">
 </head>
 <body class="dark" style="margin: 0; height: 100%; width: 100%;">
@@ -31,28 +31,10 @@
     <div id="content">
         <div id="header" style="background: rgba(0, 0, 0, 0.25); border-bottom: 2px solid rgba(255, 255, 255, 0.25); display: flex; justify-content: space-between; align-items: center;">
             <div style="height: 100%; margin: 0;">
-                <a href="/EIT/fr/index.html" style="text-decoration: none; color: unset;"><h1 style="height: 100%; display: flex;font-family: fantasy; margin: 5px;">EIT</h1></a>
+                <a href="/EIT/en/index.html" style="text-decoration: none; color: unset;"><h1 style="height: 100%; display: flex;font-family: fantasy; margin: 5px;">EIT</h1></a>
             </div>
             <div style="margin: 0;">
-                <button onclick='
-                this.classList.remove("fade");
-                document.body.classList.remove("fade");
-                if (localStorage.getItem("theme") === "light") {
-                    localStorage.setItem("theme", "dark");
-                    this.querySelector("img").src = "/EIT/cdn/img/sun.png";
-                    document.body.classList.remove("light");
-                    document.body.classList.add("dark");
-                    document.body.classList.add("fade");
-                } else {
-                    localStorage.setItem("theme", "light");
-                    this.querySelector("img").src = "/EIT/cdn/img/moon.png";
-                    document.body.classList.remove("dark");
-                    document.body.classList.add("light");
-                    document.body.classList.add("fade");
-                }
-                this.classList.add("fade");
-                setTimeout(function() { document.body.classList.remove("fade"); }, 500)'
-                id="theme" style="cursor: pointer; display: flex; margin: 5px; height: 100%;width: 35px; border: 1px solid rgba(255, 255, 255, 0.5); border-radius: 5px; background: white;">
+                <button id="theme" style="cursor: pointer; display: flex; margin: 5px; height: 100%;width: 35px; border: 1px solid rgba(255, 255, 255, 0.5); border-radius: 5px; background: white;">
                     <img style="height: 100%;width: 100%;" src="/EIT/cdn/img/sun.png" alt="Theme">
                 </button>
             </div>
@@ -61,27 +43,7 @@
             <div style="margin: 0; height: 100%; width: 65%;">
                 <div style="height: 100%; width: 100%; margin: 5% 0 0 0">
                     <div style="display: flex; align-items: center; justify-content: center; height: 100%; width: 100%">
-                        <button onclick='
-                            if (localStorage.getItem("imageId") === "4") {
-                                localStorage.setItem("imageId", "1");
-                                this.innerHTML = "<img style=\"height: 100%;width: 100%;\" src=\"/EIT/cdn/img/caddie.png\">";
-                                return;
-                            }
-                            if (localStorage.getItem("imageId") === "1" || localStorage.getItem("imageId") === null || localStorage.getItem("imageId") === undefined) {
-                                localStorage.setItem("imageId", "2");
-                                this.innerHTML = "<img style=\"height: 100%;width: 100%;\" src=\"/EIT/cdn/img/moon.png\">";
-                                return;
-                            }
-                            if (localStorage.getItem("imageId") === "2") {
-                                localStorage.setItem("imageId", "3");
-                                this.innerHTML = "<img style=\"height: 100%;width: 100%;\" src=\"/EIT/cdn/img/sun.png\">";
-                                return;
-                            }
-                            if (localStorage.getItem("imageId") === "3") {
-                                localStorage.setItem("imageId", "4");
-                                this.innerHTML = "<img style=\"height: 100%;width: 100%;\" src=\"/EIT/cdn/img/Logo.png\">";
-                                return;
-                            }' style="height: 50%; width: 50%; background: transparent; border: 0; cursor: pointer;"><img style="height: 100%; width: 100%; border-radius: 5px; height: 100%;" src="/EIT/cdn/img/moon.png" alt=""></button>
+                        <button id="image" style="height: 50%; width: 50%; background: transparent; border: 0; cursor: pointer;"><img style="height: 100%; width: 100%; border-radius: 5px; height: 100%;" src="/EIT/cdn/img/moon.png" alt=""></button>
                     </div>
                 </div>
             </div>
@@ -100,23 +62,15 @@
         </div>
         <div id="content" style="display: flex; margin: 0; height: 100%; width: 100%;">
             <div id="charContent" style="display: grid; margin: 15px 0 0 0; height: 100%; width: 100%;">
-                <h3 style="text-align: center;">Caractéristique</h3>
-                <!-- <span style="text-align: center; margin: 5px;">Chargeur: USB C (fourni)</span>
-                <span style="">Télécommande: Pile AAA (fourni)</span>
-                <span style="text-align: center; margin: 5px;">Poid: ?g</span>
-                <span style="text-align: center; margin: 5px;">Taille: ? cm</span> -->
+                <h3 id="charTitle" style="text-align: center;"></h3>
             </div>
         </div>
     </div>
     <footer style="margin: 2% 0 0 0; background: rgba(0, 0, 0, .15)">
-        <span style="display: block; margin: 3px; text-align: center;">Copyright ® EIT - 2023 - All Right Reserved</span>
+        <span id style="display: block; margin: 3px; text-align: center;">Copyright ® EIT - 2023 - All Right Reserved</span>
     </footer>
-    <!-- Ajoutez le SDK Firebase à votre page HTML -->
-    <script src="https://www.gstatic.com/firebasejs/9.2.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.2.0/firebase-database.js"></script>
     <script>
-        const product = window.location.href.replace(`https://${window.location.host}/EIT/fr/`, "").replace(".html", "");
-        const lang = window.location.href.replace(`https://${window.location.host}/EIT/`, "").replace(`/${product}.html`, "");
+        const cuttedPage = window.location.href.split("/");
         if (localStorage.getItem("theme") === undefined || localStorage.getItem("theme") === null) localStorage.setItem("theme", "dark");
         if (localStorage.getItem("theme") === "dark") {
             document.getElementById("theme").querySelector("img").src = "/EIT/cdn/img/sun.png";
@@ -125,17 +79,51 @@
             document.body.classList.remove("dark");
             document.body.classList.add("light");
         }
+        document.getElementById("theme").onmouseup = function() {
+            this.classList.remove("fade");
+            document.body.classList.remove("fade");
+            if (localStorage.getItem("theme") === "light") {
+                localStorage.setItem("theme", "dark");
+                this.querySelector("img").src = "/EIT/cdn/img/sun.png";
+                document.body.classList.remove("light");
+                document.body.classList.add("dark");
+                document.body.classList.add("fade");
+            } else {
+                localStorage.setItem("theme", "light");
+                this.querySelector("img").src = "/EIT/cdn/img/moon.png";
+                document.body.classList.remove("dark");
+                document.body.classList.add("light");
+                document.body.classList.add("fade");
+            }
+            this.classList.add("fade");
+            setTimeout(function() { document.body.classList.remove("fade"); }, 500);
+        }
+        document.getElementById("image").onmouseup = function() {
+            const image = localStorage.getItem("image");
+            if (JSON.parse(image).current === JSON.parse(image).max) {
+                localStorage.setItem("image", JSON.stringify({ current: 1, max: JSON.parse(image).max }));
+                this.innerHTML = `<img style="height: 100%;width: 100%;" src="/EIT/cdn/img/1.png">`;
+            } else {
+                localStorage.setItem("image", JSON.stringify({ current: JSON.parse(image).current++, max: JSON.parse(image).max }));
+                this.innerHTML = `<img style="height: 100%;width: 100%;" src="/EIT/cdn/img/${JSON.parse(image).current++}.png">`;
+            }
+        }
         fetch("/EIT/cdn/products.json", { method: "GET" }).then(resp => {if (resp.status === 200) return resp.json()}).then(response => {
-            const data = response[product][lang];
-            document.getElementById("title").innerText = data.name ?? product;
+            const data = response[cuttedPage[`${window.location.href.split("/").length-1}`].replace(".html", "")][cuttedPage[`${window.location.href.split("/").length-2}` ?? document.querySelector("html").lang]];
+            document.getElementById("title").innerText = data.name ?? cuttedPage[`${window.location.href.split("/").length-1}`].replace(".html", "");
             document.getElementById("description").innerText = data.description;
             document.getElementById("price").innerText = data.price;
+            document.getElementById("charTitle").innerText = data.char[1].title;
+            document.title = `${cuttedPage[`${window.location.href.split("/").length-3}`]} - ${cuttedPage[`${window.location.href.split("/").length-1}`].replace(".html", "")}`;
             data.char.forEach(char => {
+                if (!char.name || !char.value) return;
                 const span = document.createElement("span");
                 span.style = "text-align: center; margin: 5px;";
                 span.innerHTML = `${char.name}: ${char.value}`;
                 document.getElementById("charContent").appendChild(span);
             });
+            localStorage.setItem("image", JSON.stringify({ current: 1, max: data.picture.length }));
+            document.getElementById("image").innerHTML = `<img style="height: 100%;width: 100%;" src="/EIT/cdn/img/1.png">`;
         });
     </script>
 </body>
